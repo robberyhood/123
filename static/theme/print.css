@@ -1,0 +1,201 @@
+/* ==========================================================================
+   Only differences from normal styling here - added when &print=1 is used
+   v 1.1 comments + skts-collapse-arrow
+   v 1.2 - header + logo + lang
+   v 1.3 - link + comments cleanup
+   v 1.4 - MPlink
+   ========================================================================== */
+html, body {
+    overflow: visible !important;
+    font-family: "Academy Sans", Arial, sans-serif;
+}
+
+html, body, form, #resulttreeindex, #resultTreeindex, #fetchTextTreeAll, .skts-grid, .skts-module-header {
+    height: 100% !important;
+    overflow: visible !important;
+}
+
+header {
+    /*content: url('../images/skat-logo-print.png'); already in skat.min.css */
+    display: block !important;
+    margin: 0 0 10px auto;
+    width: auto !important;
+}
+
+nav,
+#navi,
+div.leftMenu,
+.langWrapper,
+div.toggleMasterWrapper,
+#aside,
+td.MPlink,
+#section-navigation,
+.headerContainer,
+div.navbar,
+div.navbar2,
+footer,
+.horizontalRuleFooter,
+.MPmenu6,
+#ratingWrapperAll,
+.badgetWrapper,
+table.forms td.forms3 input,
+.search_class,
+.leftmenuBoxWrapper,
+.ui-layout-west,
+.ui-layout-resizer,
+#resulttreeindex .MPheader,
+.skts-breadcrumb-container,
+.links4u,
+.link4u,
+.rate4u,
+.MPbottom,
+.readspeaker,
+.dap-aktionslink,
+.skts-push,
+.cookieMaster, 
+.pair-languages,
+header {
+    display: none !important;
+}
+
+td.metaText, td.metaValue {
+    font-style: normal;
+}
+
+span.breadcrum span.breadcrumHeader {
+    font-size: 1.6em;
+}
+
+.horizontalRuleHeader {
+    visibility: hidden;
+}
+
+#content, .t-col, #contentinner, .skts-col-2-3, .skts-grid, .skts-content-container, .skts-grid-pad-front, .layoutMaster, .layoutMasterWrapper {
+    width: 100% !important;
+    overflow: visible !important;
+    display: block !important;
+    height: 100% !important;
+}
+
+#container, #paddingWrapper {
+    height: 100% !important;
+    overflow: visible!important;
+}
+
+.ui-layout-west {
+    width: 0 !important;
+    height: 0 !important;
+}
+
+#content a[href^="/"]:after {
+    content: " (https://skat.dk" attr(href) ") ";
+}
+
+/* Used to remove links in print output */
+a:link:after, a:visited:after {  
+  content: normal !important;  
+}
+  
+.toggleHdr4uMaster .togglePanel4u {
+    display: block !important;
+    visibility: visible !important;
+}
+
+.toggleHdr4u button {
+    display: block !important;
+    padding-bottom: 0 !important;
+}
+  
+.toggleHdr4u button h2 {
+    font-size: 2rem !important;
+}
+
+#content {
+    width: auto !important;
+}
+
+.layoutMasterWrapper {
+    margin: 0!important;
+    width: auto !important;
+}
+
+div.dap-well--collapse {
+    border: 0 !important;
+    border-bottom: 1px solid #000 !important;
+    margin: 0 0 1rem !important;
+}
+
+.skts-collapse.skts-collapse-arrow a, 
+.skts-collapse.skts-collapse-arrow button,
+.dap-well--collapse .panelBody {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.dap-well--collapse .panelBody h3 {
+    font-size: 1.5rem !important;
+}
+
+#resulttreeindex {
+    position: static !important;
+}
+
+/*Juridisk vejledning*/
+#content #paddingWrapper {
+    margin-left: 0 !important;
+}
+
+#content #resulttreeindex {
+    width: auto !important;
+}
+
+#resultTreeindex .versionHdr {
+    display: inline;
+}
+
+#resultTreeindex .versionInfo select {
+    border: 0;
+    display: inline-block;
+    max-width: none !important;
+    width: auto !important;
+    -webkit-appearance: none;
+}
+
+#resultTreeindex .versionInfo select::-ms-expand {
+    display: none;
+}
+
+#fetchTextTreeAll {
+    font-size: 1.2em;
+}
+
+#fetchTextTreeAll h1 {
+    font-size: 1.6em;
+    margin-top: 1em;
+}
+
+#content .MPfullText {
+    width: auto !important;
+}
+
+.versionWrapper .version, .leftmenuBoxWrapper .leftmenuWrapper {
+    width: 100%;
+}
+
+.toggleHdr4uMaster .togglePanel4u .panelBody {
+    padding: 2em!important;
+}
+
+.MPlink, .skts-wrap header.MPtop, #sw-supchatwidget-btn {
+    display: none !important;
+}
+
+/*for at fjerne ikoner på accordions på 2274194*/
+.toggleHdr4u::before {
+	display:none !important;
+}
+
+/* for at kunne se grafik fra infografikker på print (fx: 2274194)*/
+.skts-infographic *  {
+    background: inherit !important;
+}

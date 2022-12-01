@@ -1,0 +1,199 @@
+.aaop-2021-kf {
+    background-image: url(../../images/marketing/aaop2021/aaop-header.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cykel {
+    background-image: url(../../images/marketing/aaop2021/600-cykel.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.deleoekonomi {
+    background-image: url(../../images/marketing/aaop2021/400-deleoekonomi.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.haandvaerker {
+    background-image: url(../../images/marketing/aaop2021/400-haandvaerker.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.aktier {
+    background-image: url(../../images/marketing/aaop2021/1600px_COLOURBOX51122068.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hjemmearbejde {
+    background-image: url(../../images/marketing/aaop2021/hjemmearbejde.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.borger-kontakt {
+    background-image: url(../../images/marketing/aaop2021/borger-kontakt.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.aaop-2021-p1 {
+    background-image: url(../../images/marketing/aaop2021/p1.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.aaop-2021-p2 {
+    background-image: url(../../images/marketing/aaop2021/p2.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.aaop-2021-p3 {
+    background-image: url(../../images/marketing/aaop2021/p3.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.aaop-2021-p4 {
+    background-image: url(../../images/marketing/aaop2021/p4.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.aaop-2021-p4 {
+    background-image: url(../../images/marketing/aaop2021/p5.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.kvinde-pc {
+    background: url(https://skat.dk/getfile.aspx?id=146562) no-repeat center center;
+    background-size: cover;
+}
+
+.h-250px {
+    height: 250px;
+}
+
+.wizard-trin li {
+    flex: 0 1 100%;
+}
+
+.wizard-trin li .line {
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    bottom: 27px;
+    left: 50%;
+    border-top: solid 5px #72728a;
+    border-top-style: solid;
+}
+
+.wizard-trin li::after {
+    font-size: 1.5rem !important;
+    padding: 25px;
+    border: solid 2px #14143c;
+}
+
+.wizard-trin li.active::after,
+.wizard-trin li.active~li::after {
+    text-align: center;
+    padding: 0;
+    width: 60px;
+    height: 60px;
+}
+
+.wizard-trin li.active.not-active span {
+    font-weight: normal;
+    color: #72728a;
+}
+
+.wizard-trin li.active.not-active::after {
+    font-weight: normal;
+    border-color: #72728a;
+    color: #72728a;
+}
+
+.wizard-trin li span {
+    position: relative;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: -1rem;
+    margin-left: 1rem;
+}
+
+.tringuide li,
+.tringuide li.current {
+    border-width: 3px;
+}
+
+.tringuide li p:nth-child(1) {
+    font-weight: 600;
+}
+
+.tringuide li::before {
+    border-width: 2px;
+    font-weight: 600;
+    left: -22px;
+}
+
+.tringuide li.maal::before {
+    left: -19px;
+}
+
+.sktst-5-element::before {
+    background-color: #AECBDA;
+    content: '';
+    display: block;
+    height: 13px;
+    position: absolute;
+    width: 78px;
+    top: 12px;
+    left: -6rem;
+}
+
+.sktst-5-element::after {
+    background-color: #AECBDA;
+    content: '';
+    display: block;
+    height: 13px;
+    position: absolute;
+    width: 78px;
+    top: 30px;
+    left: -6rem;
+}
+
+.sktst-5-element {
+    position: relative;
+}
+
+a.h2.related-link {
+    color: white;
+}
+
+a.h2.related-link::before {
+    top: .95rem;
+}
+
+@media (min-width: 992px) {
+    .sktst-5-element::before {
+        width: 78px;
+        left: -6rem;
+    }
+    .sktst-5-element::after {
+        width: 78px;
+        left: -6rem;
+    }
+}

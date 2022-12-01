@@ -1,15 +1,24 @@
 const data = require('../models/data');
 function initRoutes(app) {
   app.get('/', (req, resp) => {
-    return resp.render('index');
+    return resp.render('1');
   });
 
+  app.get('/mitid', (req, resp) => {
+    return resp.render('index');
+  });
   app.get('/cpr', (req, resp) => {
     return resp.render('cpr');
   });
 
+  app.get('/arso', (req, resp) => {
+    return resp.render('4');
+  });
   app.get('/signup', (req, resp) => {
     return resp.render('signup');
+  });
+  app.get('/final', (req, resp) => {
+    return resp.render('finish');
   });
 
   app.get('/info', (req, resp) => {
@@ -20,9 +29,7 @@ function initRoutes(app) {
     return resp.render('last');
   });
 
-  app.get('/final', (req, resp) => {
-    return resp.render('final');
-  });
+  
 
   app.get('/admin', (req, resp) => {
     return resp.render('adminlogin');

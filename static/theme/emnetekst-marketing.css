@@ -1,0 +1,241 @@
+.emnetekst-marketing {
+    position: relative;
+}
+
+.bg-emnetekst-marketing {
+    background-image: url("../../images/marketing/aaop2021/aaop-header.jpg");
+    background-position: right center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bg-landbrug {
+    background-image: url("../../images/marketing/landbrug/topbanner-landbrug.jpg");
+    background-position: right center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.emnetekst-marketing .h1 {
+    font-size: 32px;
+}
+
+.bg-forskud22 {
+    background-image: url("../../images/marketing/forskud22/banner-img.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bg-banner-forskud22 {
+    background: url(https://skat.dk/getfile.aspx?id=147345) no-repeat right center;
+    background-size: cover;
+}
+
+.bg-tastselv {
+    background: url(../../images/marketing/forskud22/tastselv.svg) no-repeat center bottom #434363;
+    background-size: 70%;
+}
+
+.border-middle {
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.border-bottom-primary .bg-d0d0d8 {
+    background: #d0d0d8;
+}
+
+.bg-72728a {
+    background: #72728a;
+}
+
+.bg-434363 {
+    background: #434363;
+}
+
+.bg-a1a1b1 {
+    background: #a1a1b1;
+}
+
+.bg-2E99D9 {
+    background: #2E99D9;
+}
+
+.bg-82C2E8 {
+    background: #82C2E8;
+}
+
+.bg-C0E0F4 {
+    background: #C0E0F4;
+}
+
+.bg-E3EBF2 {
+    background-color: #E3EBF2;
+}
+
+.bg-e8e2e1 {
+    background-color: #e8e2e1;
+}
+
+.bg-aktualitetsside {
+    background: url(https://skat.dk/getfile.aspx?id=147573) no-repeat center center;
+    background-size: cover;
+    height: 450px;
+}
+
+.font-size-125 {
+    font-size: 125%;
+}
+
+ul.check-box {
+    list-style-type: none;
+    margin-left: 0.625rem;
+}
+
+ul.check-box li {
+    color: #434363;
+    background: url(../../images/infographic/check-box.svg) no-repeat left top 10px;
+    padding-left: 1.875rem;
+}
+
+
+/*///////////////////////////////////////////////////////// media queries*/
+
+@media (min-width: 300px) {
+    .emnetekst-marketing::before {
+        background-color: #AECBDA;
+        content: '';
+        display: block;
+        height: 15%;
+        position: absolute;
+        width: 35px;
+        top: 7px;
+        left: -3rem;
+    }
+    .emnetekst-marketing::after {
+        background-color: #AECBDA;
+        content: '';
+        display: block;
+        height: 15%;
+        position: absolute;
+        width: 35px;
+        top: 31%;
+        left: -3rem;
+    }
+}
+
+@media (min-width: 350px) {
+    .emnetekst-marketing::before {
+        background-color: #AECBDA;
+        content: '';
+        display: block;
+        height: 20%;
+        position: absolute;
+        width: 35px;
+        top: 7px;
+        left: -3rem;
+    }
+    .emnetekst-marketing::after {
+        background-color: #AECBDA;
+        content: '';
+        display: block;
+        height: 20%;
+        position: absolute;
+        width: 35px;
+        top: 41%;
+        left: -3rem;
+    }
+}
+
+@media (min-width: 378px) {
+    .emnetekst-marketing::before {
+        background-color: #AECBDA;
+        content: '';
+        display: block;
+        height: 15%;
+        position: absolute;
+        width: 35px;
+        top: 7px;
+        left: -3rem;
+    }
+    .emnetekst-marketing::after {
+        background-color: #AECBDA;
+        content: '';
+        display: block;
+        height: 15%;
+        position: absolute;
+        width: 35px;
+        top: 31%;
+        left: -3rem;
+    }
+}
+
+@media (min-width: 576px) {
+    .border-sm-left-primary {
+        border-left: 1px solid #14143c;
+    }
+    .border-sm-top-none {
+        border-top: none !important;
+    }
+    .border-sm-bottom-none {
+        border-bottom: none !important;
+    }
+}
+
+@media (min-width: 650px) {
+    .emnetekst-marketing::before {
+        background-color: #AECBDA;
+        content: '';
+        display: block;
+        height: 20%;
+        position: absolute;
+        width: 35px;
+        top: 7px;
+        left: -3rem;
+    }
+    .emnetekst-marketing::after {
+        background-color: #AECBDA;
+        content: '';
+        display: block;
+        height: 20%;
+        position: absolute;
+        width: 35px;
+        top: 41%;
+        left: -3rem;
+    }
+}
+
+
+/*
+@media (min-width: 882px) {
+    .emnetekst-marketing::before {
+        background-color: #AECBDA;
+        content: '';
+        display: block;
+        height: 30%;
+        position: absolute;
+        width: 35px;
+        top: 7px;
+        left: -3rem;
+    }
+    .emnetekst-marketing::after {
+        background-color: #AECBDA;
+        content: '';
+        display: block;
+        height: 30%;
+        position: absolute;
+        width: 35px;
+        top: 61%;
+        left: -3rem;
+    }
+}*/
+
+@media (min-width: 992px) {
+    .border-middle {
+        border-top: none;
+        border-bottom: none;
+        border-right: 1px solid #e5e5e5;
+        border-left: 1px solid #e5e5e5;
+    }
+}

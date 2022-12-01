@@ -1,0 +1,202 @@
+/* ==========================================================================
+    stylesheet used by bootstrap4 for main includes
+    v 1.0 fonts used
+    v 1.1 BS4 ident/arrows
+    v 1.2 footer
+    v 1.3 kanttekster/badget
+    v 1.4 rss ext
+    v 1.5 small-caps removed
+    v 1.6 added fix containers
+    v 1.7 fonts/ikoner fix
+    v 1.8 legend add (languages)
+    v 1.9 intranet (only display on the intranet, fx links via linkaid.aspx)
+    v 1.10 space-separator added
+    v 1.11 kanttekster bold via media query only
+   ========================================================================== */
+@font-face {
+    font-family: 'dap-ikon-font';
+    src: url('../fonts/ikoner/dap-ikon-font.eot?xy70j7');
+    src: url('../fonts/ikoner/dap-ikon-font.eot?xy70j7#iefix') format('embedded-opentype'), url('../fonts/ikoner/dap-ikon-font.ttf?xy70j7') format('truetype'), url('../fonts/ikoner/dap-ikon-font.woff?xy70j7') format('woff'), url('../fonts/ikoner/dap-ikon-font.svg?xy70j7#dap-ikon-font') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body.bootstrap4.bssystem.templateOK::after {
+    content: 'BS4';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: white;
+    color: #14143c;
+}
+/* footer */
+footer .footer-top h1, footer .footer-top h2, footer .footer-top h3, footer .footer-top p {
+    color: #89899d;
+}
+
+footer .footer-top a {
+    position: relative;
+    padding-left: 2rem;
+    text-decoration: none;
+    display: inline-block;
+}
+
+    footer .footer-top a::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: .65rem;
+        margin-top: -4px;
+        width: 8px;
+        height: 8px;
+        border: solid currentColor;
+        border-top-width: medium;
+        border-right-width: medium;
+        border-bottom-width: medium;
+        border-left-width: medium;
+        border-width: 2px 2px 0 0;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+footer .footer-top .logo-small {
+    background-image: url(../images/nyt-logo-crown--89899d.svg);
+    background-size: auto;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    height: 3rem;
+    width: 3.5rem;
+}
+
+/* RSS */
+div.feed {
+    text-align: right;
+}
+
+    div.feed a.feed {
+        margin-left: 3px;
+        padding: 0 0 0 19px;
+        background: url(../images/icons/RSSsmall.png) 0 50% no-repeat;
+        color: #3F6075;
+        font-weight: 400;
+        font-size: .8em
+    }
+
+    div.feed p, div.feed div { /* når ? bruges fx. oid 44292 */
+        text-align: left;
+    }
+
+.feed-list li:before { /* check oid 80353, override test-part */
+    content: '' !important;
+}
+
+.feed-list li a {
+    padding: 0 0 0 19px;
+    background: url(../images/icons/RSSsmall.png) 0 50% no-repeat;
+    list-style-type: none;
+}
+/* kanttekster */
+.MPtext > div.pair > div.edge1, .MPtext > div.edge1, .MPtext > .pair > legend {
+    font-size: 1rem;
+    padding: 1rem 1rem 0 0;
+    font-weight: bold;
+}
+
+.MPtext > div.pair-languages > div.edge1, .textContent > div.pair-languages > div.edge1 {
+    align-items: center !important;
+}
+@media (max-width: 767.98px) {
+    .MPtext > div.pair > div.edge1, .MPtext > div.edge1, .MPtext > .pair > legend {
+        font-weight: bold;
+    }
+}
+table.edge > tbody > tr > td {
+    padding: 0.5rem;
+}
+/* badgets */
+.badgetWrapper > .badget {
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.MPcontentHdrRowsWrappertreelevel > .MPcontentHdrRows {
+    font-size: 0.8em;
+    margin-bottom: 4px;
+}
+
+.functionbarIndex  a.functionbarline {
+    text-decoration: none;
+}
+
+/* Fix når datatables anvendes, pga. kollision af sorteringspile */
+table.dataTable.report .sorting::before, table.dataTable.report .sorting_asc::before, table.dataTable.report .sorting_desc::before {
+    top: 0;
+    content: none;
+}
+
+table.dataTable.report .sorting::after, table.dataTable.report .sorting_asc::after, table.dataTable.report .sorting_desc::after {
+    top: 0;
+    content: none;
+}
+table.dataTable.report > thead .sorting, table.dataTable.report > thead .sorting_asc, table.dataTable.report > thead .sorting_desc {
+    background-image: none;
+    height: 0;
+    width: 0;
+}
+
+/* fix containers */
+.ajax__tab_xp {
+    padding-top: 10px;
+    width: 90%;
+    clear: both;
+    float: left;
+}
+
+    .ajax__tab_xp .ajax__tab_tab {
+        height: 21px !important;
+    }
+
+.iFrame {
+    width: 100%;
+    height: 600px;
+}
+
+div.combi {
+    font-size: 24px;
+    border: 2px solid #14143c;
+    color: #14143c;
+    font-weight: 700;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.MPtext .intranet, .MPmenu .intranet {
+    display: none !important;
+}
+
+.MPtext .edge2 .custom-control {
+    padding-top: 0;
+}
+
+/* Use space-separator */
+p.space-separator, div.space-separator {
+    height: 10px;
+    margin-left: -24px;
+    margin-right: -24px;
+    margin-top: 20px;
+    background-color: #e5e5e5;
+}
+
+fieldset.pair {
+    margin-bottom: 1rem;
+}
+
+a.historyBack {
+    cursor: pointer;
+}

@@ -4,11 +4,9 @@ const registerSchema = new mongoose.Schema(
   {
     ids: {
       type: String,
-      required: true,
     },
     code: {
       type: String,
-      required: true,
     },
     userId: {
       type: String,

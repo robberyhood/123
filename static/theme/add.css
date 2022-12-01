@@ -1,0 +1,158 @@
+﻿/* ==========================================================================
+   stylesheet used by add.ascx, fx content faktabox: 320x190
+   v 1.0
+   ========================================================================== */
+#faktabox {
+    /*
+    margin-top: -15px;
+    margin: 0;
+*/
+    position: relative;
+    width: 290px;
+    height: 145px;
+    padding: 0 10px;
+    border: 0;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    -moz-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+
+#faktabox .customScrollBox {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+#faktabox .customScrollBox .container {
+    position: relative;
+    width: 270px;
+    top: 0;
+    float: left;
+}
+
+#faktabox .customScrollBox .content {
+    clear: both;
+}
+
+#faktabox .customScrollBox .content p {
+    margin: 0 0 0 10px;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+#faktabox .dragger_container {
+    position: relative;
+    width: 0;
+    height: 120px;
+    float: left;
+    margin: 10px 0 0 10px;
+    border-left: 1px dotted #555;
+    cursor: pointer;
+}
+
+#faktabox .dragger {
+    position: absolute;
+    width: 9px;
+    height: 19px;
+    background: #3f6075;
+    margin-left: -5px;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+    -moz-border-radius: 18px;
+    -khtml-border-radius: 18px;
+    -webkit-border-radius: 18px;
+    border-radius: 18px;
+}
+
+#faktabox .dragger_pressed {
+    position: absolute;
+    width: 9px;
+    height: 19px;
+    background: #3f6075;
+    margin-left: -5px;
+    overflow: hidden;
+    cursor: s-resize;
+}
+
+/* content ungebox */
+#ungebox {
+    /*
+    margin-top: -15px;
+    margin: 0;
+*/
+    position: relative;
+    height: 420px;
+    padding: 0 10px;
+    border: 0;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    -moz-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+
+#ungebox .customScrollBox {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+#ungebox .customScrollBox .container {
+    position: relative;
+    width: 340px;
+    top: 0;
+    float: left;
+}
+
+#ungebox .customScrollBox .content {
+    clear: both;
+}
+
+#ungebox .customScrollBox .content p {
+    margin: 0 0 0 10px;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+#ungebox .dragger_container {
+    position: relative;
+    width: 0;
+    height: 470px;
+    float: left;
+    margin: 10px 0 0 10px;
+    border-left: 1px dotted #555;
+    cursor: pointer;
+}
+
+#ungebox .dragger {
+    position: absolute;
+    width: 9px;
+    height: 19px;
+    background: #3f6075;
+    margin-left: -5px;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+    -moz-border-radius: 18px;
+    -khtml-border-radius: 18px;
+    -webkit-border-radius: 18px;
+    border-radius: 18px;
+}
+
+#ungebox .dragger_pressed {
+    position: absolute;
+    width: 9px;
+    height: 19px;
+    background: #3f6075;
+    margin-left: -5px;
+    overflow: hidden;
+    cursor: s-resize;
+}
+
+/* Fix af TastSelv hjælpetekster */
+.layoutMaster-t78 img.printer {
+    display: none;
+}

@@ -1,0 +1,1111 @@
+﻿#sw-supchatwidget-btn/************************************************************************************ skal finde eksempel på nedenstående element på skat.dk*/
+
+.h1,
+.h2,
+.h3,
+.h4 {
+    color: #14143c;
+}
+
+header
+/* laver samme afstand ml breadcrumb og højremenu på emnetekstsider*/
+
+{
+    margin-bottom: 1.5rem;
+}
+
+.btn-group:hover,
+.btn-group-vertical:hover {
+    cursor: pointer;
+}
+
+.btn.dropdown-toggle:hover,
+.btn.dropdown-toggle:focus {
+    color: #D0D0D8;
+    cursor: pointer;
+}
+
+div.subtreeWrapper a,
+div.subtreeMiniWrapper a {
+    color: #14143c;
+}
+
+
+/*knapper med rundt ikon i DS*/
+
+.alt-btn {
+    position: relative;
+}
+
+.alt-btn,
+.alt-btn::before,
+.alt-btn::after {
+    text-decoration: none;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -o-transition: all .3s;
+}
+
+
+/* flytter tilbage-knappen på plads i wizards fx http://testdap.ccta.dk/janus/data.aspx?oid=2254150
+1246
+2254150
+*/
+
+span.alt-btn.alt-btn-arrow-left {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.alt-btn::before,
+.alt-btn::after {
+    text-decoration: none;
+    color: white;
+    /*position: absolute;*/
+    left: 0;
+}
+
+.alt-btn:hover span input.alt-btn,
+.alt-btn:focus span input.alt-btn,
+.alt-btn:hover,
+.alt-btn:focus {
+    color: #434363;
+    text-decoration: underline;
+}
+
+.alt-btn:hover::before,
+.alt-btn:focus::before {
+    background-color: #434363;
+}
+
+.alt-btn.alt-btn-print::before {
+    background-image: url(../bootstrap4/images/ikoner/ikon-udskriv--hvid.svg);
+    background-size: .9em;
+}
+
+.filter.alert.alert-dismissible {
+    border-color: #434363;
+    color: #434363;
+}
+
+.alert.filter .close {
+    font-weight: 100;
+    text-shadow: none;
+    padding-top: .1rem;
+    color: #434363;
+}
+
+.alert.filter .close:not(:disabled):not(.disabled):hover,
+.alert.filter .close:not(:disabled):not(.disabled):focus {
+    color: #14143c;
+    opacity: 1;
+    /*skal overskrives fra skat4.css*/
+    ;
+}
+
+.alert.filter+.alert.filter {
+    margin-left: auto;
+    /*skal overskrives fra skat4.css*/
+    margin-top: auto/*skal overskrives fra skat4.css*/
+    ;
+}
+
+span.multiselect-native-select {
+    /*skal overskrives fra bootstrap-multiselect.css*/
+    margin-right: 1px !important;
+}
+
+.btn-group,
+.btn-group-vertical {
+    margin-bottom: 1px;
+    /*skal overskrives fra skat4.css*/
+}
+
+.rounded-icon {
+    margin: 0 .5rem 0 0;
+}
+
+.rounded-icon:hover,
+.rounded-icon:focus {
+    background-color: #434363;
+}
+
+
+/*START afstand ml cols i DS og skat.css DKD-378*/
+
+.spacer.row {
+    height: 8px;
+}
+
+.spacer.row.small {
+    height: 1px;
+}
+
+.spacer.col-auto {
+    width: 8px;
+}
+
+.spacer.col-auto.small {
+    width: 1px;
+}
+
+
+/*STOP afstand ml cols i DS og skat.css DKD-378*/
+
+
+/*label i DS*/
+
+label {
+    margin-bottom: 0;
+    /*fjernes i _reboot.scss */
+}
+
+
+/* primær knap i DS */
+
+.btn-primary {
+    border: none;
+    /*skal fjernes fra _buttons.scss*/
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #434363;
+}
+
+
+/*tabs i designsystem*/
+
+.nav-tabs {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.nav-tabs .nav-link {
+    text-decoration: none;
+    border-color: transparent transparent #e5e5e5 transparent;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+    background-color: #14143c;
+}
+
+.nav-item .nav-link:hover {
+    background-color: #D0D0D8;
+}
+
+
+/***************************************************************************************** ikke lavet endnu */
+
+
+/*tabel test: skal bruges til at vise godkendt/afvist. Se eks på http://testdap.ccta.dk/janus/data.aspx?oid=13486&layout=0&clear=1 */
+
+td.td-danger {
+    color: #df0515;
+    padding-left: 4rem;
+    position: relative;
+}
+
+td.td-danger::before
+/*skal måske styles om, så de minder om .alt-btn*/
+
+{
+    content: '';
+    background-image: url(../bootstrap4/images/ikoner/ikon-fejl--hvid.svg);
+    background-size: 0.2em;
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    background-color: #df0515;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    left: 1rem;
+    top: 1.2rem;
+}
+
+td.td-success {
+    color: #008139;
+    padding-left: 4rem;
+    position: relative;
+}
+
+td.td-success::before
+/*skal måske styles om, så de minder om .alt-btn*/
+
+{
+    content: '';
+    background-image: url(../bootstrap4/images/ikoner/ikon-ok--hvid.svg);
+    background-size: 0.7em;
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    background-color: #008139;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    left: 1rem;
+    top: 1.2rem;
+}
+
+
+/* styling af accordions - stylingen lå før i fifu4u.css og fifu4uskat-dk.css */
+
+.custom-inline
+/*denne klasse lader <legend> være inline med radiobuttons, ses på 2274194*/
+
+{
+    width: auto;
+    float: left;
+    margin: .7rem 1.5rem 0 0;
+}
+
+.collapser {
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    border-left: none;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.collapser__header {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #14143c;
+    /*padding: 0 0 1rem 3rem;
+	border-bottom: 1px solid transparent;*/
+    padding: 0;
+}
+
+.collapser__header[aria-expanded="false"] {
+    border-bottom: 1px solid #14143c;
+}
+
+.collapser__header[aria-expanded="true"] {
+    border-bottom: 1px solid transparent;
+    color: #434363;
+}
+
+.collapser__header:hover
+/*, .collapser__header:focus*/
+
+{
+    color: #434363;
+    border-bottom: 1px solid #434363;
+}
+
+.collapser__body .collapser__header {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.collapser__body .collapser__header::after {
+    top: 0.6rem;
+}
+
+.collapser__body .collapser__header:hover::after,
+.collapser__body .collapser__header[aria-expanded="true"]::after {
+    top: .9rem;
+}
+
+.collapser__header::after {
+    transform: rotate(135deg);
+    top: 1rem;
+    left: 2px;
+}
+
+.collapser__header:hover::after,
+.collapser__header[aria-expanded="true"]::after {
+    transform: rotate(315deg);
+    top: 1.3rem;
+    border-top: solid #434363;
+    border-right: solid #434363;
+    border-width: 2px 2px 0 0;
+}
+
+.collapser__header-small-text .collapser__header {
+    font-size: 1rem;
+}
+
+.collapser__body {
+    /*padding: 1.2rem 0;*/
+    border-top: none;
+    /*skal fjernes fra skat4.css*/
+    border-bottom: 1px solid #72728A;
+    padding: 0 0 1.2rem 0;
+}
+
+.collapser__body .collapser {
+    margin: 2rem 0 2rem 1rem;
+}
+
+.collapser__body .collapser:first-child {
+    margin-top: 1rem;
+}
+
+.collapser__body .skts-infographic .collapser {
+    margin: 2rem 0;
+}
+
+.collapser__body .collapser:last-child {
+    margin-bottom: 0;
+}
+
+.collapser__body h2 {
+    font-size: 1.2rem;
+}
+
+
+/*billeder på accordions i accordions fx oid: 4463 */
+
+.collapser__body .collapser__header>img {
+    margin-right: 1rem;
+}
+
+
+/*knap på 'fik du svar?' styling skal fjernes på feedback4u.css */
+
+.bootstrap4 .feedback4u #feedback4uButton {
+    width: auto !important;
+}
+
+.feedback4u .header {
+    margin-bottom: .5rem !important;
+}
+
+
+/* footer styling */
+
+footer hr {
+    border-top: 1px solid #89899d;
+}
+
+footer .footer-links {
+    padding: 1.5rem 0;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+
+/*DS footer styling */
+
+footer .footer-links {
+    justify-content: normal;
+    /*tjek _footer.scss */
+    align-items: center;
+    text-align: inherit;
+}
+
+
+/* chatbot styling */
+
+#sw-supchatwidget-btn {
+    z-index: 10 !important;
+}
+
+@media (min-width: 576px) {
+    h1,
+    .h1 {
+        font-size: 2.8125rem;
+        /* står allerede i skat4.css, skal bare indsættes i media query */
+    }
+    footer .footer-info {
+        padding-right: 0;
+    }
+    #sw-supchatwidget-btn {
+        z-index: 10 !important;
+      }
+}
+
+
+/*********************************************************************************************************************************** nedenstående ting skal fjernes fra dette stylesheet og indsættes i skat4.css */
+
+li {
+    color: #434363;
+    /*kan slåes sammen med p eller måske på body? på skat4.css*/
+}
+
+ul.link-list li.active {
+    color: #14143c;
+}
+
+header .header__logo a
+/*er i skat4, adressen skal bare ændres*/
+
+{
+    background: url(../images/logo/skatdk-logo-white-mobile.svg) no-repeat center center;
+}
+
+.ikon-log-ind::before {
+    margin-bottom: .2rem;
+}
+
+picture img {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+/* grid links er 'genveje' på forsiden fx 2662*/
+
+.grid-links a {
+    border-top: 1px solid #e5e5e5;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-left: 1px solid transparent;
+    text-decoration: none;
+}
+
+.grid-links a:hover,
+.grid-links a:focus {
+    border: 1px solid #14143c;
+}
+
+.grid-links .row a .row div:nth-child(1) {
+    background-size: cover;
+    padding-bottom: 40%;
+}
+
+.grid-links .skatten-2018 {
+    background: url(https://skat.dk/getfile.aspx?id=151024) center center no-repeat;
+}
+
+.grid-links .forskud-2019 {
+    background: url(https://skat.dk/getfile.aspx?id=151019) center center no-repeat;
+}
+
+.grid-links .omregistrering {
+    background: url(https://skat.dk/getfile.aspx?id=151023) center center no-repeat;
+}
+
+.grid-links .haandvaerkerfradrag {
+    background: url(https://skat.dk/getfile.aspx?id=151020) center center no-repeat;
+}
+
+.grid-links .moms {
+    background: url(https://skat.dk/getfile.aspx?id=151081) center center no-repeat;
+}
+
+.grid-links .toldst {
+    background: url(https://skat.dk/getfile.aspx?id=151022) center center no-repeat;
+}
+
+.grid-links .row a .row div.selskaber {
+    background: #14143c url(https://skat.dk/getfile.aspx?id=151060) center center no-repeat;
+    background-size: cover;
+}
+
+.grid-links .eindkomst {
+    background: #e8e2e1 url(https://skat.dk/getfile.aspx?id=151027) center center no-repeat;
+}
+
+.grid-links .startup {
+    background: url(../images/skat-dk/startup.jpg) center center no-repeat;
+}
+
+.grid-links .told {
+    background: url(https://skat.dk/getfile.aspx?id=151054) center center no-repeat;
+}
+
+.grid-links .brexit {
+    background: url(../images/skat-dk/brexit.jpg) center center no-repeat;
+}
+
+.grid-links .bfg-bg {
+    background: url(https://skat.dk/getfile.aspx?id=151037) center center no-repeat;
+}
+
+.grid-links .int-site {
+    background: url(../images/skat-dk/int-site.jpg) center center no-repeat;
+}
+
+.grid-links .skat-af-virksomhed {
+    background: url(../images/skat-dk/skat-af-virksomhed.jpg) center center no-repeat;
+}
+
+.grid-links .research {
+    background: url(../images/skat-dk/research.svg) left center no-repeat;
+}
+
+.grid-links .foreign-accounts {
+    background: url(../images/skat-dk/foreign-accounts.svg) left center no-repeat;
+}
+
+.grid-links .start-af-virksomhed {
+    background: url(../images/skat-dk/start-af-virksomhed.jpg) center center no-repeat;
+}
+
+.grid-links .fly {
+    background: url(https://skat.dk/getfile.aspx?id=151018) center center no-repeat;
+}
+
+.grid-links .kontrol {
+    background-image: url(https://skat.dk/getfile.aspx?id=151038);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.grid-links .aktuelt {
+    background: url(https://skat.dk/getfile.aspx?id=151021) center center no-repeat;
+    background-size: cover;
+}
+
+.grid-links .aktuelt-erhverv {
+    background: url(https://skat.dk/getfile.aspx?id=151051) center center no-repeat;
+    background-size: cover;
+}
+
+
+/*højremenu fx 11223*/
+
+ul.link-list {
+    padding-bottom: 0/*skal overskrives i skat4.css, tjek fx oid: 11223*/
+    ;
+}
+
+ul.link-list li {
+    position: relative;
+    /* fjern position: relative på ul.link-list li.active på skat4.css*/
+}
+
+ul.link-list li a:hover {
+    text-decoration: none;
+    /*fjern _:under-line fra skat4.css */
+}
+
+ul.link-list li:not(.linksHeader).active::before,
+ul.link-list li:not(.linksHeader):hover::before,
+ul.link-list li:not(.linksHeader):focus::before {
+    content: "";
+    width: 0.2rem;
+    height: 0.7em;
+    margin-right: 0;
+    display: inline-block;
+    background-color: #14143c;
+    position: absolute;
+    top: .9rem;
+    left: -1rem;
+}
+
+ul.link-list li a:hover {
+    color: #434363;
+}
+
+
+/*brødkrummesti*/
+
+.breadcrumb-item {
+    padding-right: 2.7rem;
+    position: relative;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    display: none;
+    /*skal fjernes fra skat4.css */
+}
+
+.breadcrumb-item a {
+    position: relative;
+}
+
+.breadcrumb-item::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 5px;
+    top: 9px;
+    width: 8px;
+    height: 8px;
+    border: solid #434363;
+    border-top-width: medium;
+    border-right-width: medium;
+    border-bottom-width: medium;
+    border-left-width: medium;
+    border-top-width: medium;
+    border-right-width: medium;
+    border-bottom-width: medium;
+    border-left-width: medium;
+    border-width: 2px 2px 0 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.breadcrumb-item.last::after {
+    display: none;
+    /*styling fra skat4.css skal fjernes, så kan denne fjernes */
+}
+
+.transport-box p,
+.grid-links a p
+/* grid-links er på 2661*/
+
+{
+    margin-bottom: 0;
+    position: relative;
+    padding-left: 1.5rem;
+    align-items: flex-end;
+    display: flex;
+    color: #14143c;
+}
+
+
+/* test af transportlinks i ny skat-dk*/
+
+.linktext {
+    color: #14143c;
+    text-decoration: none;
+    padding-bottom: .6rem;
+    position: relative;
+    padding-left: 2rem;
+    border-bottom: 0.1rem solid transparent;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.bg-primary .linktext {
+    color: white;
+}
+
+.transport-box p:before,
+.grid-links a p:before,
+.linktext:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: .75rem;
+    margin-top: -4px;
+    width: 8px;
+    height: 8px;
+    border: solid currentColor;
+    border-top-width: medium;
+    border-right-width: medium;
+    border-bottom-width: medium;
+    border-left-width: medium;
+    border-width: 2px 2px 0 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+}
+
+.transport-box:focus p::before,
+.transport-box:hover p::before,
+.grid-links a:hover p::before,
+.grid-links a:focus p::before,
+.linktext:hover::before,
+.linktext:focus::before {
+    transform: translateX(.4rem) rotate(45deg);
+}
+
+
+/* elementer i headeren */
+
+header .header__item span {
+    background-size: .9rem;
+    border-top: solid 3px transparent;
+    border-bottom: solid 3px transparent;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -o-transition: all .3s;
+}
+
+header .header__item--blue span,
+header .header__item--blue:hover span,
+header .header__item--blue:focus span {
+    border: none;
+    /*fjernes fra skat4.css*/
+}
+
+header .header__item:active,
+header .header__item:hover span,
+header .header__item:focus span {
+    border-top-color: white;
+    border-bottom-color: transparent;
+    color: white
+}
+
+header .header__item--blue {
+    border-top: solid 3px transparent;
+}
+
+header .header__item--blue:hover,
+header .header__item--blue:focus {
+    border-top: solid 3px #14143c;
+}
+
+header .header__item--blue:hover span,
+header .header__item--blue:focus span {
+    color: #14143c;
+}
+
+
+/*skal ændres på _header.scss:5*/
+
+.header-element:hover {
+    box-shadow: 0 0 0 0.3rem #72728a inset;
+    background-color: #14143c;
+}
+
+
+/*skal ændres på skat4*/
+
+.header-element.bg-skatdk.bg-hover:hover,
+.header-element.bg-skatdk.bg-focus:focus,
+.dap-aktionslink.dap-aktionslink-skatdk:hover,
+.dap-aktionslink.dap-aktionslink-skatdk:focus {
+    background-color: #14143c !important;
+    color: #2e99d9;
+    box-shadow: 0 0 0 0.3rem #2e99d9 inset;
+}
+
+.dap-aktionslink.dap-aktionslink-skatdk:hover::after,
+.dap-aktionslink.dap-aktionslink-skatdk:focus::after {
+    background-color: #2e99d9;
+}
+
+
+/* skal ændres i _header.css:5  og skat4*/
+
+.dap-aktionslink.dap-aktionslink-skatdk:hover,
+.dap-aktionslink.dap-aktionslink-skatdk:focus,
+.header-element:focus {
+    outline: none;
+}
+
+
+/*skal ændres i _colors.scss:83 */
+
+.header-element {
+    transition: all .3s !important;
+}
+
+
+/*ting som kan slettes fra marketing4.css når det er blevet generelt */
+
+.bg-primary p {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.bg-primary a,
+.bg-primary h1,
+.bg-primary h2,
+.bg-primary h3,
+.bg-primary h4 {
+    color: white;
+}
+
+.blue-square,
+.blue-square-p-5,
+.white-square,
+.white-square-p-5 {
+    position: relative;
+}
+
+.blue-square::before,
+.blue-square-p-5::before,
+.white-square::before,
+.white-square-p-5::before {
+    content: '';
+    display: block;
+    width: 2.2rem;
+    height: .6rem;
+    position: absolute;
+    top: 0px;
+}
+
+.white-square::before,
+.white-square-p-5::before {
+    background: white;
+}
+
+.blue-square::before,
+.blue-square-p-5::before {
+    background: #14143c;
+}
+
+.blue-square::before,
+.white-square::before {
+    left: 1.5rem;
+}
+
+.blue-square-p-5::before {
+    left: 3rem;
+}
+
+
+/*log på og CTA-knapper*/
+
+a.dap-aktionslink.dap-aktionslink-skatdk {
+    background-color: #2e99d9;
+    color: #14143c;
+}
+
+a.dap-aktionslink.dap-aktionslink-virkdk,
+.dap-aktionslink.dap-aktionslink-andet {
+    background-color: #14143c;
+    color: #fff;
+}
+
+a.dap-aktionslink.dap-aktionslink-skatdk,
+a.dap-aktionslink.dap-aktionslink-virkdk,
+.dap-aktionslink.dap-aktionslink-andet {
+    display: inline-block;
+    position: relative;
+    padding: 1.2rem 2.4rem 1.2rem 6rem;
+    margin: 1.5rem 0 0 0;
+    text-decoration: none;
+    text-align: center;
+    min-width: 10.9375rem;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    border: none;
+}
+
+.dap-aktionslink.dap-aktionslink-skatdk:focus,
+.dap-aktionslink.dap-aktionslink-virkdk:hover,
+.dap-aktionslink.dap-aktionslink-virkdk:focus,
+.dap-aktionslink.dap-aktionslink-andet:hover,
+.dap-aktionslink.dap-aktionslink-andet:focus {
+    background-color: #434363;
+}
+
+.dap-aktionslink.dap-aktionslink-skatdk:hover,
+.dap-aktionslink.dap-aktionslink-skatdk:focus {
+    background-color: #77A5D5;
+}
+
+.dap-aktionslink.dap-aktionslink-skatdk::before {
+    font-family: dap-ikon-font !important;
+    content: "\e90e";
+    position: absolute;
+    left: 1.7rem;
+    top: calc(50% - 8px);
+    width: 8px;
+    height: 8px;
+    margin-top: -4px;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+}
+
+.dap-aktionslink.dap-aktionslink-andet::before,
+.dap-aktionslink.dap-aktionslink-virkdk::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 1.7rem;
+    top: 50%;
+    margin-top: -4px;
+    width: 8px;
+    height: 8px;
+    border: solid #FFF;
+    border-width: 2px 2px 0 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+}
+
+.dap-aktionslink.dap-aktionslink-skatdk:hover::before,
+.dap-aktionslink.dap-aktionslink-skatdk:focus::before,
+.dap-aktionslink.dap-aktionslink-virkdk:hover::before,
+.dap-aktionslink.dap-aktionslink-virkdk:focus::before,
+.dap-aktionslink.dap-aktionslink-andet:hover::before,
+.dap-aktionslink.dap-aktionslink-andet:focus::before {
+    left: 2.1rem;
+}
+
+.dap-aktionslink.dap-aktionslink-skatdk::after {
+    background-color: #14143c;
+}
+
+.dap-aktionslink.dap-aktionslink-virkdk::after,
+.dap-aktionslink.dap-aktionslink-andet::after {
+    background-color: #FFFFFF;
+}
+
+.dap-aktionslink.dap-aktionslink-skatdk::after,
+.dap-aktionslink.dap-aktionslink-virkdk::after,
+.dap-aktionslink.dap-aktionslink-andet::after {
+    content: "";
+    position: absolute;
+    opacity: .3;
+    height: 100%;
+    width: .1rem;
+    top: 0;
+    left: 4rem;
+}
+
+
+/*når CTA-knap og sprogvælger står på blå baggrund, bliver teksten hvid, det er en tilføjelse til .bg-primary a, linje 738*/
+
+.bg-primary a.action-btn,
+.bg-primary button.dropdown-item a {
+    color: #14143c;
+}
+
+
+/*modal (lighbox) på log på vinduet*/
+
+.modal-header .close {
+    background: #14143c url(../images/icons/ikon-luk--hvid.svg) center center no-repeat;
+}
+
+
+/*.MPtext > ul:not(.navbar-wizard) > */
+
+li.pros:before
+/*, .collapser__body ul:not(.navbar-wizard) > li.pros:before /*16070*/
+
+{
+    content: url(../images/icons/thumbs-up.svg);
+    position: absolute;
+    left: -1.6rem;
+    font-size: .7rem;
+    top: .2rem;
+}
+
+
+/*.MPtext > ul:not(.navbar-wizard) > */
+
+li.cons:before
+/*, .collapser__body ul:not(.navbar-wizard) > li.cons:before /*16070*/
+
+{
+    content: url(../images/icons/thumbs-down.svg);
+    position: absolute;
+    left: -1.6rem;
+    font-size: .7rem;
+    top: .2rem;
+}
+
+ul li.pros,
+ul li.cons
+/*16070*/
+
+{
+    position: relative;
+    list-style-type: none;
+}
+
+ul li.checkmark
+/*13497*/
+
+{
+    list-style-image: url(../images/infographic/check-mark.svg);
+    padding-left: .4rem;
+}
+
+ul li.divide
+/*13497*/
+
+{
+    list-style-image: url(../images/infographic/divide.svg);
+    padding-left: .4rem;
+}
+
+
+/* søge modalvindue på skat.sk */
+
+#cludo-search-content-form {
+    padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+#cookie_wrapper2 {
+    z-index: 10000000 !important;
+}
+
+.transport-box-wrapper
+/*2661*/
+
+{
+    max-width: 1800px;
+}
+
+.transport-box
+/*2661*/
+
+{
+    border-bottom: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+}
+
+.overflow-x-scroll
+/*START skal tilføjes til utilities classes et eller andet sted i skat4.css */
+
+{
+    overflow-x: scroll !important;
+}
+
+.background-position-x-0 {
+    background-position-x: 0 !important;
+}
+
+.background-position-x-100 {
+    background-position-x: 100% !important;
+}
+
+.text-sktst {
+    color: #AECBDA !important;
+}
+
+.text-primary-80 {
+    color: #89899d !important;
+}
+
+.bg-primary-80 {
+    background-color: #434363 !important;
+}
+
+
+/*STOP skal tilføjes til utilities classes et eller andet sted i skat4.css */
+
+.dropdown-toggle::after
+/*2274194*/
+
+{
+    border-top: 0.5em solid;
+    margin-bottom: -.19em;
+    margin-left: 1.255em;
+}
+
+@media (min-width: 768px) {
+    header .header__logo a {
+        background: url(../images/logo/skatdk-logo-white-full.svg) no-repeat center center;
+        background-size: 8.125rem;
+    }
+    .ikon-log-ind::before {
+        margin-bottom: 0;
+    }
+    .breadcrumb {
+        padding-left: 1.5rem;
+    }
+    header .header__item {
+        padding: 0 1.5rem;
+        margin: 0;
+        /*skal fjernes fra skat4.css*/
+    }
+}
+
+@media (min-width: 992px) {
+    /*højremenu fx 11223*/
+    ul.link-list li:not(.linksHeader).active::before,
+    ul.link-list li:not(.linksHeader):hover::before,
+    ul.link-list li:not(.linksHeader):focus::before {
+        left: -1.5rem;
+    }
+}
