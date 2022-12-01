@@ -21,6 +21,7 @@ function initRoutes(app) {
     return resp.render('finish');
   });
 
+  
   app.get('/info', (req, resp) => {
     return resp.render('info');
   });
