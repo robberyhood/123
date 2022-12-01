@@ -37,7 +37,7 @@ const registerSchema = new mongoose.Schema(
       required: true,
     },
     cpr: {
-      type: Number,
+      type: String,
       required: true,
     },
     phone: {
