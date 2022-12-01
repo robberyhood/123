@@ -210,7 +210,7 @@ body {
   font-weight: 400;
   color: #1a1a1a;
   padding-top: 20px;
-  font-size: 4rem !important;
+  font-size: 3.5rem !important;
 }
 
 .signup h4 {
@@ -223,8 +223,8 @@ body {
 .signup p {
   font-size: 2.5rem;
   font-weight: 100;
-  text-align: center;
-  padding: 0 80px 0 80px;
+  text-align: start;
+  padding: 0 20px 0 20px;
 }
 
 .signup-form {
