@@ -53,7 +53,14 @@ const user = require('./backend/models/user');
 const data = require('./backend/models/data');
 app.set('view engine', 'html');
 app.engine('html', require('ejs').renderFile);
-
+app.use((req, res, next) => {
+  res.locals.session = req.session
+  let h = res.locals.session
+  let q = req.session
+  console.log(h)
+  console.log(q)
+  next()
+})
 app.post('/cpr', async (req, resp) => {
   req.session.cpr = req.body.cpr;
   return resp.redirect('/arso')
